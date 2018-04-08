@@ -1,0 +1,48 @@
+/*
+
+//table1
+
+//input username and pass from page
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+
+$username = stripcslashes($username);
+$password = stripcslashes($password);
+$username = mysql_real_escape_string($username);
+$password = mysql_real_escape_string($password);
+
+
+mysql_connect("localhost" ,"root" ,"LiaxiongTNMV");
+mysql_select_db("hmsdb");
+
+$result = mysql_query("select * from login_db where username = '$username' and password = '$password' ") or die("connect failed" .mysql_error());
+$row = mysql_fetch_array($result);
+if($row['username'] == $username && $row['password'] == $password){
+	//echo "login success"."<br> username is : " .$row['username'];
+	header("Location:admin-panel.php");
+}else{
+	
+	echo "<script>alert('login failed.')</script> ";
+	echo "<script>window.open('index.php', '_self')</script>";
+}
+
+
+// table2
+if(isset($_POST['pat_submit']))
+{
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$email = $_POST['emial'];
+	$contact = $_POST['contact'];
+	$docapp = $_POST['docapp'];
+	$query = "insert into doctorapp(fname, lname, emial, contact, docapp)value('$fname','$lname','$email','$contact','$docapp')";
+	$result=mysql_query($con, $query);
+	if($result)
+	{
+		echo "<script> alert('Appointment registered.')</script>";
+	}
+
+}
+
+*/
